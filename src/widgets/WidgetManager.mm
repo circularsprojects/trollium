@@ -167,17 +167,33 @@ NSDictionary* getBatteryInfo()
     return dict;
 }
 
-static NSString* formattedTemp()
+// static NSString* formattedTemp()
+// {
+//     NSDictionary *batteryInfo = getBatteryInfo();
+//     if (batteryInfo) {
+//         // AdapterDetails.Watts.Description.Temperature
+//         double temp = [batteryInfo[@"Temperature"] doubleValue] / 100.0;
+//         if (temp) {
+//             return [NSString stringWithFormat: @"%.2fºC", temp];
+//         }
+//     }
+//     return @"??ºC";
+// }
+
+static NSString* formattedTROLL()
 {
-    NSDictionary *batteryInfo = getBatteryInfo();
-    if (batteryInfo) {
-        // AdapterDetails.Watts.Description.Temperature
-        double temp = [batteryInfo[@"Temperature"] doubleValue] / 100.0;
-        if (temp) {
-            return [NSString stringWithFormat: @"%.2fºC", temp];
-        }
-    }
-    return @"??ºC";
+    return @"⠀⠀⠀⠀⠀⣤⠖⠒⠒⢒⡒⠶⠖⠒⠒⠒⠒⠒⠒⠲⠤⠤⣄⡀⠀⠀⠀⠀\
+⠀⠀⠀⢠⡞⠁⢀⠄⡢⡑⠦⠈⠉⠡⡉⠀⠀⠀⡀⠀⠤⢍⠀⠉⠳⣄⠀⠀\
+⠀⠀⢠⡞⠀⠀⠀⠪⢊⣠⣤⣤⢤⣀⠁⠀⠀⠀⠎⠀⣀⣀⠑⠀⠀⢹⡀⠀\
+⢀⣴⠟⣒⣢⣄⣒⠔⠛⠛⣻⠛⠶⣬⡷⠀⠀⢤⡾⠿⠛⠛⠃⠒⠒⢂⢝⣦\
+⡟⠈⣸⠋⣠⣦⣉⠙⠒⠚⠁⠀⠀⣀⡀⠀⠀⠀⢧⡀⠀⠶⠴⢋⠙⠂⡆⢼\
+⢷⢠⠹⠈⠹⣆⡉⠛⡶⠤⣍⣉⡙⣏⠴⠶⠀⡀⣠⠟⠓⠠⢀⣼⣧⠨⢔⡟\
+⠈⠳⣎⠀⠀⠙⣟⠳⣿⣤⣄⡉⡟⠓⠒⢶⡤⠭⣥⠤⠴⣖⢻⣟⣿⠀⣾⠀\
+⠀⠀⠘⣆⠀⠀⠈⠳⣇⠈⠉⢻⠻⠶⣶⣾⣷⣶⣾⣶⣶⣿⣾⣿⣿⠀⡇⠀\
+⠀⠀⠀⠈⢧⣄⢄⠠⢈⠓⠦⣞⣀⠀⠀⡏⠉⠉⡟⢉⡿⢹⢏⣯⠇⠀⣿⠀\
+⠀⠀⠀⠀⠀⠉⠳⢮⣐⠩⢒⡠⢉⡉⠙⠛⠒⠚⠓⠚⠛⠉⢉⡡⠀⠀⢿⠀\
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢬⣉⡀⠛⠃⠠⠤⠤⠤⠀⠈⠁⠄⠊⠀⣼⠀\
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠓⠲⠦⢤⣄⣀⣀⣀⣀⣀⣤⠞⠁⠀";
 }
 
 #pragma mark - Battery Widget
@@ -274,7 +290,7 @@ void formatParsedInfo(NSDictionary *parsedInfo, NSInteger parsedID, NSMutableAtt
             // Device Temp
             [
                 mutableString appendAttributedString:[[NSAttributedString alloc] initWithString:[
-                    NSString stringWithFormat: @"%c%@", getSeparator(mutableString), formattedTemp()
+                    NSString stringWithFormat: @"%c%@", getSeparator(mutableString), formattedTROLL()
                 ] attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT_SIZE]}]
             ];
             break;

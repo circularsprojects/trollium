@@ -1,4 +1,6 @@
-# Helium
+# Helium (really stupid fork edition)
+this is a fork of helium that literally just replaces device temperature with a giant ascii trollface
+
 Status Bar Widgets for TrollStore iPhones on iOS 15+. Works on Jailbroken devices as well.
 
 More widgets to come in future updates!
